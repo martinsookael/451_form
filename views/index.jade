@@ -11,13 +11,13 @@ block content
 			form(parsley-validate, method="post")#self
 				p
 					label="URL:"
-					input(type="text", parsley-required="true", name="url", title="Täpne aadress, kus asub soovida eemaldatav sisu")#url
+					input(type="text", parsley-required="true", name="url", title="Täpne aadress, kus asub sisu, mida soovitakse eemaldada")#url
 				p
 					label="Selgitus:"
-					textarea(name="message", parsley-required="true", title="Kirjelda probleemi võimalikult täpselt. On ülimalt tõenäoline et selle kirja saaja ei ole süüdi soovida eemaldatava sisu eksisteerimises tema lehel")#message
+					textarea(name="message", parsley-required="true", title="Kirjelda probleemi võimalikult täpselt. On tõenäoline, et kirja saaja ei ole süüdi teid segava sisu eksisteerimises tema lehel.")#message
 				p
 					label="Kontaktisiku e-mail:"
-					input(name="contactPerson", type="text", parsley-required="true", title="Saavutate parima tulemuse kui leiate lehelt kust soovite sisu eemaldada kontaktisiku")#contactPerson
+					input(name="contactPerson", type="text", parsley-required="true", title="Saavutate parima tulemuse, kui leiate lehelt, kust soovite lasta sisu eemaldada, mõne kontaktisiku andmed")#contactPerson
 				p
 					label="Põhjus:"
 					select(name="reason", parsley-required="true", title="Vali, millist seadust antud sisu rikub")#reason
