@@ -1,7 +1,7 @@
 451_form
 ========
 
-Short description:
+Short description:  
 451.ee helps you to remove illegal content from internet.
 
 A bit longer description: 
@@ -15,12 +15,13 @@ A bit longer description:
 5. Displays graphics and log about the inputed data. 
 ![alt tag](https://raw.github.com/martinsookael/451_form/master/public/images/mock4.gif)
 
-Specs: Back: \n
+Specs: Back: 
 NodeJs
-MongoDb
+MongoDb   // PARSE.COM
 Express 
 Nodemailer https://github.com/andris9/Nodemailer
-Localization - i18n - https://github.com/mashpie/i18n-node (?)
+// Localization - i18n - https://github.com/mashpie/i18n-node (?)
+TEEB EESTI KEELES.
 Whois - https://npmjs.org/package/whoisclient
 
 Specs: Front:
@@ -30,6 +31,8 @@ JQuery
 Form validator - http://parsleyjs.org/ (or - https://github.com/caolan/forms )
 Raphaël (Graphs) -  http://raphaeljs.com/   or Paper.js
 Tooltips - Tipsy
+Block robots
+
 
 Testing: 
 What should we use for testing?
@@ -37,6 +40,10 @@ What should we use for testing?
 Routes:
 Form - free / paied service
 Statistics - shows the statistics with a few Raphael grapsh
+
+To consider: 
+Forever - runst the app
+How will it come up after server restart
 
 
 
