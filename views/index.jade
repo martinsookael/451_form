@@ -1,5 +1,32 @@
 extends layout
 
 block content
-    p="Hello! Yes this is Dog!"    
-  
+	div#main
+		ul.nav-tabs.nav
+			li.active
+				a="Iseteenindus"
+			li
+				a="Tasuline"
+		div#selfService
+			form#self
+				p
+					label="URL"
+					input#url
+				p
+					label="message"
+					textarea#message
+				p
+					label="reason"
+					select#reason
+						option(value="esimene")="esimene"
+						option(value="teine")="teine"
+				p
+					label="Contact persons"
+					input#contactPerson
+				p
+					label="Your name"
+					input#name
+				p
+					label="Your e-mail"
+					input#email
+				input(type="submit", value="Saada")#send
