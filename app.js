@@ -78,17 +78,7 @@ function sendMail(post) {
 	
 	var mailContent = createMail(post);
 	console.log(mailContent);
-	
-	/*mail({
-		from: "451.ee ✔ <info@451.ee>", // sender address
-		to: post.contactPerson, // list of receivers
-		subject: "Info eemaldamise palve", // Subject line
-		text: mailContent, // plaintext body
-		//html: "<b>Hello world ✔</b>" // html body
-	});	*/
-	
-	console.log("receiver: " + post.contactPerson);
-	
+			
 	var message = {
 	
 		// sender info
@@ -124,7 +114,7 @@ function sendMail(post) {
 
 }
 
-getPosts();
+//getPosts();
 function getPosts() {
 
 	// query with parameters
