@@ -15,7 +15,7 @@ A bit longer description:
 5. Displays graphics and log about the inputed data. 
 ![alt tag](https://raw.github.com/martinsookael/451_form/master/public/images/mock4.gif)
 
-Specs: Back: 
+Specs: Back: \n
 NodeJs
 MongoDb
 Express 
