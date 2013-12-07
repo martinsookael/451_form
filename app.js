@@ -17,7 +17,8 @@ var kaiseki_app_id = process.env.ID;
 var kaiseki_rest_aki_key = process.env.KEY;
 var kaiseki = new Kaiseki(kaiseki_app_id, kaiseki_rest_aki_key);
 
-var mail = require("nodemailer").mail;
+var nodemailer = require('nodemailer');
+var transport = nodemailer.createTransport("Direct", {debug: true});
 
 
 
@@ -44,10 +45,10 @@ app.post('/', function(req, res){
 	var post = new Array;
 	post.url = req.param('url');
 	post.reason = req.param('reason');
-	post.message = req.param('reason');
-	post.contactPerson = req.param('reason');
-	post.name = req.param('reason');
-	post.email = req.param('reason');
+	post.message = req.param('message');
+	post.contactPerson = req.param('contactPerson');
+	post.name = req.param('name');
+	post.email = req.param('email');
 	savePost(post);
 	sendMail(post);
 	res.redirect('/stats');
@@ -88,13 +89,49 @@ function sendMail(post) {
 	var mailContent = createMail(post);
 	console.log(mailContent);
 	
-	mail({
+	/*mail({
 		from: "451.ee ✔ <info@451.ee>", // sender address
 		to: post.contactPerson, // list of receivers
 		subject: "Info eemaldamise palve", // Subject line
 		text: mailContent, // plaintext body
 		//html: "<b>Hello world ✔</b>" // html body
-	});	
+	});	*/
+	
+	console.log("receiver: " + post.contactPerson);
+	
+	var message = {
+	
+		// sender info
+		from: "451.ee <info@451.ee>",
+	
+		// Comma separated list of recipients
+		to: post.contactPerson,
+	
+		// Subject of the message
+		subject: "Info eemaldamise palve", //
+	
+		// plaintext body
+		text: mailContent,
+	
+		// HTML body
+		//html:'<p><b>Hello</b> to myself <img src="cid:note@node"/></p>'+
+		//	 '<p>Here\'s a nyan cat for you as an embedded attachment:<br/><img src="cid:nyan@node"/></p>',
+	
+	};	
+
+	console.log('Sending Mail');
+	
+	transport.sendMail(message, function(error, response){
+		if(error){
+			console.log('Error occured');
+			console.log(error.message);
+			return;
+		}else{
+			console.log(response);
+			console.log('Message sent successfully!');
+		}
+	});
+
 }
 
 function createMail(post) {
