@@ -10,6 +10,9 @@ p {
 a {
   color: #f15a24;
 }
+strong {
+  font-family: BandaSemibold-SemiBold !important;
+}
 #main {
   margin-top: 20px;
   width: 100%;
@@ -36,4 +39,11 @@ form>p>textarea {
 }
 .tipsy-inner {
   max-width: 400px;
+}
+.parsley-error {
+  background-color: #ebccd1 !important;
+  border: 1px solid #900 !important;
+}
+.required {
+  font-family: BandaSemibold-SemiBold !important;
 }

@@ -8,29 +8,32 @@ block content
 			li
 				a="Tasuline"
 		div#selfService
-			form(parsley-validate)#self
+			form(parsley-validate, method="post")#self
 				p
 					label="URL:"
-					input(type="text", title="Täpne aadress, kus asub soovida eemaldatav sisu")#url
+					input(type="text", parsley-required="true", name="url", title="Täpne aadress, kus asub soovida eemaldatav sisu")#url
 				p
 					label="Selgitus:"
-					textarea(title="Kirjelda probleemi võimalikult täpselt. On ülimalt tõenäoline et selle kirja saaja ei ole süüdi soovida eemaldatava sisu eksisteerimises tema lehel")#message
+					textarea(name="message", parsley-required="true", title="Kirjelda probleemi võimalikult täpselt. On ülimalt tõenäoline et selle kirja saaja ei ole süüdi soovida eemaldatava sisu eksisteerimises tema lehel")#message
 				p
-					label="Kontaktisik:"
-					input(type="text", title="Saavutate parima tulemuse kui leiate lehelt kust soovite sisu eemaldada kontaktisiku")#contactPerson
+					label="Kontaktisiku e-mail:"
+					input(name="contactPerson", type="text", parsley-required="true", title="Saavutate parima tulemuse kui leiate lehelt kust soovite sisu eemaldada kontaktisiku")#contactPerson
 				p
 					label="Põhjus:"
-					select(title="Vali, millist seadust antud sisu rikub")#reason
-						option(value="esimene")="Isikuandmeid puudutava sisu eemaldamine"
-						option(value="teine")="Tarbijate õigusi rikkuva või konkurenti halvustava sisu eemaldamine"
-						option(value="kolmas")="Hasartmängulehekülgede eemaldamine "
-						option(value="neljas")="Karistusseadusega keelatud tegevused (vaenu õhutamine, identiteedivargus, lasteporno, sõjapropaganda, internetikelmused jne)"
-						option(value="viies")="Laimu, halvustava, privaatsust rikkuva või isikuõigusi riivava sisu eemaldamine"
-						option(value="kuues")="Sisu, mis rikub autoriõigusi"
+					select(name="reason", parsley-required="true", title="Vali, millist seadust antud sisu rikub")#reason
+						option(value="")="Vali siit juriidiline alus sisu eemaldamiseks"
+						option(value="r1")="Isikuandmeid puudutava sisu eemaldamine"
+						option(value="r2")="Tarbijate õigusi rikkuva või konkurenti halvustava sisu eemaldamine"
+						option(value="r3")="Hasartmängulehekülgede eemaldamine "
+						option(value="r4")="Karistusseadusega keelatud tegevused (vaenu õhutamine, identiteedivargus, lasteporno, sõjapropaganda, internetikelmused jne)"
+						option(value="r5")="Laimu, halvustava, privaatsust rikkuva või isikuõigusi riivava sisu eemaldamine"
+						option(value="r6")="Sisu, mis rikub autoriõigusi"
 				p
 					label="Sinu nimi:"
-					input(type="text")#name
+					input(name="name", type="text", parsley-required="true")#name
 				p
 					label="Sinu e-mail:"
-					input(type="text", parsley-type="email", parsley-required="true")#email
+					input(name="email", type="text", parsley-type="email", parsley-required="true")#email
+				p.
+				<strong>Kõikide väljade täitmine on kustuslik.</strong><br />
 				input(type="submit", value="Saada")#send
