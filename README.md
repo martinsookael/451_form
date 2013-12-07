@@ -8,9 +8,10 @@ Short description:
 451.ee helps you to remove illegal content from internet.
 
 Team:  
-Ele-Riin Kullamä  
+Ele-Riin Kullamä - Marketing
 Silver Meikar  
-Martin Sookael
+Martin Sookael - Development
+Jaan Kruusma - Marketing help
 
 Extra help:  
 Merilin Mandel - Estonian language help
