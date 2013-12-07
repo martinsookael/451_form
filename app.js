@@ -4,8 +4,8 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user') // user = stats
+  , routes = require('./routes') 
+  , stats = require('./routes/stats') // user = stats
   , http = require('http')
   , path = require('path');
 
@@ -18,8 +18,6 @@ var kaiseki_rest_aki_key = process.env.KEY;
 var kaiseki = new Kaiseki(kaiseki_app_id, kaiseki_rest_aki_key);
 
 var mail = require("nodemailer").mail;
-
-
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -51,17 +49,9 @@ app.post('/', function(req, res){
 	savePost(post);
 	sendMail(post);
 	res.redirect('/stats');
-/*	
-    articleProvider.save({
-        title: req.param('title'),
-        body: req.param('body')
-    }, function( error, docs) {
-        res.redirect('/')
-    });
-*/
 });
 
-app.get('/stats', user.list); // user = stats
+app.get('/stats', stats.list); // user = stats
 
 
 /* 
@@ -110,6 +100,7 @@ function getPosts() {
 	  console.log('10 last posts = ', body);
 	});
 
+	// I AM SO SORRY FOR QUERYING LIKE THIS BUT IT'S 10:49 PM AND I STILL HAVE A LOT TO DO!!!!
 	var params1 = {
 		where: {"reason":"r1"},
 		count: 1,
