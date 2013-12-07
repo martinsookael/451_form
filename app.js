@@ -4,8 +4,8 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user') // user = stats
+  , routes = require('./routes') 
+  , stats = require('./routes/stats') // user = stats
   , http = require('http')
   , path = require('path');
 
@@ -19,8 +19,6 @@ var kaiseki = new Kaiseki(kaiseki_app_id, kaiseki_rest_aki_key);
 
 var nodemailer = require('nodemailer');
 var transport = nodemailer.createTransport("Direct", {debug: true});
-
-
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -52,17 +50,9 @@ app.post('/', function(req, res){
 	savePost(post);
 	sendMail(post);
 	res.redirect('/stats');
-/*	
-    articleProvider.save({
-        title: req.param('title'),
-        body: req.param('body')
-    }, function( error, docs) {
-        res.redirect('/')
-    });
-*/
 });
 
-app.get('/stats', user.list); // user = stats
+app.get('/stats', stats.list); // user = stats
 
 
 /* 
@@ -132,6 +122,65 @@ function sendMail(post) {
 		}
 	});
 
+}
+
+getPosts();
+function getPosts() {
+
+	// query with parameters
+	var params = {
+		order: '-createdAt',
+		limit: 10
+	};
+	
+	kaiseki.getObjects('Posts', params, function(err, res, body, success) {
+	  console.log('10 last posts = ', body);
+	});
+
+	// I AM SO SORRY FOR QUERYING LIKE THIS BUT IT'S 10:49 PM AND I STILL HAVE A LOT TO DO!!!!
+	var params1 = {
+		where: {"reason":"r1"},
+		count: 1,
+		limit: 0
+	};
+
+	var params2 = {
+		where: {"reason":"r2"},
+		count: 1,
+		limit: 0
+	};
+
+	var params3 = {
+		where: {"reason":"r3"},
+		count: 1,
+		limit: 0
+	};
+	var params4 = {
+		where: {"reason":"r4"},
+		count: 1,
+		limit: 0
+	};
+	var params5 = {
+		where: {"reason":"r5"},
+		count: 1,
+		limit: 0
+	};
+	
+	kaiseki.getObjects('Posts', params1, function(err, res, body, success) {
+	  console.log('r1 = ', body);
+	});
+	kaiseki.getObjects('Posts', params2, function(err, res, body, success) {
+	  console.log('r2 = ', body);
+	});
+	kaiseki.getObjects('Posts', params3, function(err, res, body, success) {
+	  console.log('r3 = ', body);
+	});
+	kaiseki.getObjects('Posts', params4, function(err, res, body, success) {
+	  console.log('r4 = ', body);
+	});
+	kaiseki.getObjects('Posts', params5, function(err, res, body, success) {
+	  console.log('r5 = ', body);
+	});
 }
 
 function createMail(post) {
