@@ -8,7 +8,7 @@ block content
 			li
 				a="Tasuline"
 		div#selfService
-			form#self
+			form(parsley-validate)#self
 				p
 					label="URL:"
 					input(type="text", title="Täpne aadress, kus asub soovida eemaldatav sisu")#url
@@ -32,5 +32,5 @@ block content
 					input(type="text")#name
 				p
 					label="Sinu e-mail:"
-					input(type="text")#email
+					input(type="text", parsley-type="email", parsley-required="true")#email
 				input(type="submit", value="Saada")#send
