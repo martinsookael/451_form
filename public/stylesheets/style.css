@@ -34,3 +34,6 @@ form>p>textarea {
 ::selection {
   background: #999;
 }
+.tipsy-inner {
+  max-width: 400px;
+}

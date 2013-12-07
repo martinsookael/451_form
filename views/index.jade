@@ -10,17 +10,17 @@ block content
 		div#selfService
 			form#self
 				p
-					label="URL"
-					input(type="text")#url
+					label="URL:"
+					input(type="text", title="Täpne aadress, kus asub soovida eemaldatav sisu")#url
 				p
-					label="Selgitus"
-					textarea#message
+					label="Selgitus:"
+					textarea(title="Kirjelda probleemi võimalikult täpselt. On ülimalt tõenäoline et selle kirja saaja ei ole süüdi soovida eemaldatava sisu eksisteerimises tema lehel")#message
 				p
-					label="Kontaktisik"
-					input(type="text")#contactPerson
+					label="Kontaktisik:"
+					input(type="text", title="Saavutate parima tulemuse kui leiate lehelt kust soovite sisu eemaldada kontaktisiku")#contactPerson
 				p
-					label="Põhjus"
-					select#reason
+					label="Põhjus:"
+					select(title="Vali, millist seadust antud sisu rikub")#reason
 						option(value="esimene")="Isikuandmeid puudutava sisu eemaldamine"
 						option(value="teine")="Tarbijate õigusi rikkuva või konkurenti halvustava sisu eemaldamine"
 						option(value="kolmas")="Hasartmängulehekülgede eemaldamine "
@@ -28,9 +28,9 @@ block content
 						option(value="viies")="Laimu, halvustava, privaatsust rikkuva või isikuõigusi riivava sisu eemaldamine"
 						option(value="kuues")="Sisu, mis rikub autoriõigusi"
 				p
-					label="Sinu nimi"
+					label="Sinu nimi:"
 					input(type="text")#name
 				p
-					label="Sinu e-mail"
+					label="Sinu e-mail:"
 					input(type="text")#email
 				input(type="submit", value="Saada")#send
