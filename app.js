@@ -17,6 +17,9 @@ var kaiseki_app_id = process.env.ID;
 var kaiseki_rest_aki_key = process.env.KEY;
 var kaiseki = new Kaiseki(kaiseki_app_id, kaiseki_rest_aki_key);
 
+var mail = require("nodemailer").mail;
+
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -41,7 +44,12 @@ app.post('/', function(req, res){
 	var post = new Array;
 	post.url = req.param('url');
 	post.reason = req.param('reason');
+	post.message = req.param('reason');
+	post.contactPerson = req.param('reason');
+	post.name = req.param('reason');
+	post.email = req.param('reason');
 	savePost(post);
+	sendMail(post);
 	res.redirect('/stats');
 /*	
     articleProvider.save({
@@ -72,6 +80,17 @@ function savePost(post) {
 	  console.log('object created = ', body);
 	  console.log('object id = ', body.objectId);
 	});
+}
+
+
+function sendMail(post) {
+	mail({
+		from: "451.ee ✔ <info@451.ee>", // sender address
+		to: post.contactPerson, // list of receivers
+		subject: "Info eemaldamise palve", // Subject line
+		text: "Hello world ✔", // plaintext body
+		//html: "<b>Hello world ✔</b>" // html body
+	});	
 }
 
 
