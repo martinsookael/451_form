@@ -7,6 +7,17 @@ http://451.ee:3000/
 Short description:  
 451.ee helps you to remove illegal content from internet.
 
+Team:
+Ele-Riin Kullamä
+Silver Meikar
+Martin Sookael
+
+
+Volunteer help: 
+Merilin Mandel
+Andri Möll
+
+
 A bit longer description:  
 1. Embeddable lightweight form.  
 ![alt tag](https://raw.github.com/martinsookael/451_form/master/public/images/mock1.gif)  

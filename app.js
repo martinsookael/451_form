@@ -13,8 +13,8 @@ var app = express();
 
 var Kaiseki = require('kaiseki');
 
-var kaiseki_app_id = 'WJFMomn6bGRu1vr5NqCPXjkN1gFGi2PLNVtjhY7K';
-var kaiseki_rest_aki_key = '4neyaBs1cD8LN9OO0HTw1Yxw6D6HEwsM8mvf6GWr';
+var kaiseki_app_id = process.env.ID;
+var kaiseki_rest_aki_key = process.env.KEY;
 var kaiseki = new Kaiseki(kaiseki_app_id, kaiseki_rest_aki_key);
 
 
