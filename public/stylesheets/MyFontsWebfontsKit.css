@@ -1,0 +1,32 @@
+/* @license
+ * MyFonts Webfont Build ID 2579175, 2013-06-12T15:52:46-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Banda Semi Bold by Typedepot
+ * URL: http://www.myfonts.com/fonts/typedepot/banda/semi-bold/
+ * 
+ * Webfont: Banda Regular by Typedepot
+ * URL: http://www.myfonts.com/fonts/typedepot/banda/regular/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2579175
+ * Webfonts copyright: All Rights reserved.Copyright &#x00A9; 2011 By typedepot.
+ * 
+ * © 2013 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/275ae7");
+
+  
+@font-face {font-family: 'BandaSemibold-SemiBold';src: url('/fonts/275AE7_0_0.eot');src: url('/fonts/275AE7_0_0.eot?#iefix') format('embedded-opentype'),url('/fonts/275AE7_0_0.woff') format('woff'),url('/fonts/275AE7_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'BandaRegular';src: url('/fonts/275AE7_1_0.eot');src: url('/fonts/275AE7_1_0.eot?#iefix') format('embedded-opentype'),url('/fonts/275AE7_1_0.woff') format('woff'),url('/fonts/275AE7_1_0.ttf') format('truetype');}
+ 

@@ -11,22 +11,26 @@ block content
 			form#self
 				p
 					label="URL"
-					input#url
+					input(type="text")#url
 				p
-					label="message"
+					label="Selgitus"
 					textarea#message
 				p
-					label="reason"
+					label="Kontaktisik"
+					input(type="text")#contactPerson
+				p
+					label="Põhjus"
 					select#reason
-						option(value="esimene")="esimene"
-						option(value="teine")="teine"
+						option(value="esimene")="Isikuandmeid puudutava sisu eemaldamine"
+						option(value="teine")="Tarbijate õigusi rikkuva või konkurenti halvustava sisu eemaldamine"
+						option(value="kolmas")="Hasartmängulehekülgede eemaldamine "
+						option(value="neljas")="Karistusseadusega keelatud tegevused (vaenu õhutamine, identiteedivargus, lasteporno, sõjapropaganda, internetikelmused jne)"
+						option(value="viies")="Laimu, halvustava, privaatsust rikkuva või isikuõigusi riivava sisu eemaldamine"
+						option(value="kuues")="Sisu, mis rikub autoriõigusi"
 				p
-					label="Contact persons"
-					input#contactPerson
+					label="Sinu nimi"
+					input(type="text")#name
 				p
-					label="Your name"
-					input#name
-				p
-					label="Your e-mail"
-					input#email
+					label="Sinu e-mail"
+					input(type="text")#email
 				input(type="submit", value="Saada")#send
