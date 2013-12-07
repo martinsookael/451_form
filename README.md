@@ -12,7 +12,7 @@ Ele-Riin Kullamä
 Silver Meikar  
 Martin Sookael
 
-Volunteer help:  
+Extra help:  
 Merilin Mandel - Estonian language help
 Andri Möll - Node js help
 legal help 1
