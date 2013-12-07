@@ -97,6 +97,64 @@ function sendMail(post) {
 	});	
 }
 
+getPosts();
+function getPosts() {
+
+	// query with parameters
+	var params = {
+		order: '-createdAt',
+		limit: 10
+	};
+	
+	kaiseki.getObjects('Posts', params, function(err, res, body, success) {
+	  console.log('10 last posts = ', body);
+	});
+
+	var params1 = {
+		where: {"reason":"r1"},
+		count: 1,
+		limit: 0
+	};
+
+	var params2 = {
+		where: {"reason":"r2"},
+		count: 1,
+		limit: 0
+	};
+
+	var params3 = {
+		where: {"reason":"r3"},
+		count: 1,
+		limit: 0
+	};
+	var params4 = {
+		where: {"reason":"r4"},
+		count: 1,
+		limit: 0
+	};
+	var params5 = {
+		where: {"reason":"r5"},
+		count: 1,
+		limit: 0
+	};
+	
+	kaiseki.getObjects('Posts', params1, function(err, res, body, success) {
+	  console.log('r1 = ', body);
+	});
+	kaiseki.getObjects('Posts', params2, function(err, res, body, success) {
+	  console.log('r2 = ', body);
+	});
+	kaiseki.getObjects('Posts', params3, function(err, res, body, success) {
+	  console.log('r3 = ', body);
+	});
+	kaiseki.getObjects('Posts', params4, function(err, res, body, success) {
+	  console.log('r4 = ', body);
+	});
+	kaiseki.getObjects('Posts', params5, function(err, res, body, success) {
+	  console.log('r5 = ', body);
+	});
+}
+
 function createMail(post) {
 
 	var content = "Lugupeetud veebihaldur!\r\n\r\nKirjutame Teile lehelt www.451.ee. Meie eesmärk on Internetikeskkonna turvalisemaks ja lugupidavamaks muutmine.\r\n\r\nPöördume Teie poole seoses järgneva lingi / pildi avaldamisega Teie veebilehel:\r\n\r\n";
