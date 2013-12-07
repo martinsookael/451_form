@@ -13,8 +13,10 @@ Silver Meikar
 Martin Sookael
 
 Volunteer help:  
-Merilin Mandel  
-Andri Möll
+Merilin Mandel - Estonian language help
+Andri Möll - Node js help
+legal help 1
+legal help 2
 
 
 A bit longer description:  
