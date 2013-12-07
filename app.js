@@ -84,17 +84,58 @@ function savePost(post) {
 
 
 function sendMail(post) {
+	
+	var mailContent = createMail(post);
+	console.log(mailContent);
+	
 	mail({
 		from: "451.ee ✔ <info@451.ee>", // sender address
 		to: post.contactPerson, // list of receivers
 		subject: "Info eemaldamise palve", // Subject line
-		text: "Hello world ✔", // plaintext body
+		text: mailContent, // plaintext body
 		//html: "<b>Hello world ✔</b>" // html body
 	});	
 }
 
+function createMail(post) {
 
+	var content = "Lugupeetud veebihaldur!\r\n\r\nKirjutame Teile lehelt www.451.ee. Meie eesmärk on Internetikeskkonna turvalisemaks ja lugupidavamaks muutmine.\r\n\r\nPöördume Teie poole seoses järgneva lingi / pildi avaldamisega Teie veebilehel:\r\n\r\n";
+	content += post.url;
+	content += "\r\n\r\nMeie poole on pöördutud seoses sellel lingil toimuva isikuandmete kaitsega seotud õiguste rikkumisega. \r\n\r\nPeaksite viidatud andmed viivitamata oma veebilehelt eemaldama.";
+	
+	switch(post.reason) {
+		case "r1": // Isikuandmeid puudutava sisu eemaldamine 
+		content += "Isikuandmeid puudutava sisu eemaldamine:\r\nKui inimesest on Internetti pandud foto või video, mida ta seal näha ei soovi, võib ta nõuda, et see maha võetaks (Isikuandmete kaitse seaduse (IKS) § 11 lg 4).\r\n\r\nMahavõtmist võib nõuda inimene ise (IKS § 11 lg 4) või pöördudes Andmekaitse Inspektsiooni poole (IKS § 22). Kui on teada, kes pildi või video Internetti pani, saab nõude esitada isikuandmete töötlejale ehk veebilehe omanikule (IKS § 7 lg 1). Kui ei ole teada, kes lehekülje omanik on, aitab veebiteenuse pakkuja selle kindlaks teha (HMS § 38 lg 3).\r\n\r\nKui veebilehe omanik fotot maha ei võta, võib inimene pöörduda Andmekaitse Inspektsiooni poole ja veebilehe omaniku suhtes võib kohaldada sunniraha (IKS § 40 lg 2).";
+		break;
 
+		case "r2": // Tarbijate õigusi rikkuva või konkurenti halvustava sisu eemaldamine  
+		content += "Tarbijate õigusi rikkuva või konkurenti halvustava sisu eemaldamine\r\nTarbija õiguste rikkumine võib tähendada näiteks eksitavat reklaami, mille mõni firma on oma kodulehele pannud (tarbijakaitseseadus (TKS) §121 lg 2).\r\n\r\nSel juhul võtab Tarbijakaitseamet ühendust firma endaga või teenusepakkujaga, kelle serveris koduleht asub (näiteks veebimajutus.ee) (TKS § 17 lg 2 p 1).\r\n\r\nKui firma sellest hoolimata eksitavat reklaami maha ei võta, jätkab tarbijakaitseamet asjaga tegelemist seni, kuni sisu muudetakse või eemaldatakse. Peale selle võib tarbijakaitseamet määrata firmale (või lisaks ka teenusepakkujale) trahvi (TKS § 471).";
+		break;
+
+		case "r3": // Karistusseadustikuga keelatud tegevused (vaenu õhutamine, identiteedivargus, lasteporno, sõjapropaganda, internetikelmused jne)  
+		content += "Karistusseadustikuga keelatud tegevused (vaenu õhutamine, identiteedivargus, lasteporno, sõjapropaganda, internetikelmused jne)\r\nKui tegu on näiteks Internetis vaenu õhutamisega, on tegemist kuriteoga, mille eest näeb vastutuse ette karistusseadustik (KarS).\r\n\r\nSel juhul alustatakse lehekülje omaniku ja teenusepakkujale, kelle serveris koduleht asub, suhtes kriminaalmenetlust (kriminaalmenetluse seadustik (KrMS) § 6).\r\n\r\nKui isik mõistetakse süüdi, siis võib teda karistada rahalise karistuse või vangistusega.";
+		break;
+
+		case "r4": // Laimu, halvustava, privaatsust rikkuva või isikuõigusi riivava sisu eemaldamine
+		content += "Laimu, halvustava, privaatsust rikkuva või isikuõigusi riivava sisu eemaldamine\r\nTeise inimese laimamine, au teotamine või isikuõiguste riivamine internetis ei ole kena, aga lisaks on see ka seadusevastane (VÕS § 1046 lg 1)!\r\n\r\n Isik saab ise saata laimajale nõude laim internetist maha võtta. Kui ta ei tea, kes laimu Interetti pani, saab ta pöörduda Andmekaitse Inspektsiooni, selgitamaks, kes on selle taga (HMS § 38 lg 3).\r\n\r\nKui laimavat sisu sellest hoolimata maha ei võeta, on inimesel õigus pöörduda kohtusse – ja nõuda sisu eemaldamist (TsMS § 3 lg 1). Õiguste rikkujalt võib nõuda kahjutasu (VÕS § 1043).";
+		break;
+
+		case "r5": // Sisu, mis rikub autoriõigusi 
+		content += "Sisu, mis rikub autoriõigusi<br />Kui keegi on oma kodulehele ilma õiguseid omamata pannud üles muusikat, filme või arvutiprogramme (aga ka muud autoriõiguste alla kuuluvat materjali), siis on tegu intellektuaalomandi rikkumisega (autoriõiguse seadus (AutÕS) § 814).\r\n\r\n Sel juhul võtab kodulehe omanikuga või teenusepakkujaga, kelle serveris koduleht asub, ühendust kas autoriõiguste omanik ise või autoriõiguste kaitse organisatsioon ja nõuab sisu eemaldamist (AutÕS § 13 lg 1 p 2).<br /><br />Kui inimene sellest hoolimata filme, muusikat või muud autoriõigustega kaitstud sisu maha ei võta, võtab teenusepakkuja lehekülje maha (AutÕS § 13 lg 1 p 2, KarS § 223 lg 1). Kui teenusepakkuja lehekülge maha ei võta, siis on ka tema kaasvastutav.";
+		break;
+			
+		default: 
+		content += "";
+		break;
+	}
+		
+//Andmesubjektil on isikuandmete kaitse seaduse § 11 lõike 4 alusel õigus igal ajal nõuda isikuandmete töötlejalt isikuandmete töötlemise lõpetamist. 
+//Kui Te viidatud andmeid ei eemalda, siis vastavalt isikuandmete kaitse seaduse § 22-le on andmesubjektil õigus pöörduda Andmekaitse Inspektsiooni poole, kellel on õigus veebilehe omaniku suhtes rakendada isikuandmete kaitse seaduse nõuete rikkumise eest sunniraha summas kuni 9600 eurot (isikuandmete kaitse seaduse § 40 lg 2). 
+
+	content += "Palun lugege õiguslikku teavet rikkumise kohta aadressil:\r\nhttp://451.ee/juriidiline-analuus/\r\n\r\nSoovitame Teil andmete eemaldamisel mitte kasutada veakoodi error 404, vaid koodi 451 selgitusega “Seadus piirab ligipääsu” viitega lingile www.451.ee/sisu-eemaldamise-viisid/ \r\n\r\nHindame teie koostööd ja abi! Parimate soovidega!\r\nTeie 451";
+		
+	return content;
+}
 
 
 process.on('uncaughtException', function (exception) {
