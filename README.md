@@ -17,10 +17,9 @@ A bit longer description:
 
 Specs: Back:  
 NodeJs  
-MongoDb   // PARSE.COM  
 Express  
+Parse.com  
 Nodemailer https://github.com/andris9/Nodemailer  
-// Localization - i18n - https://github.com/mashpie/i18n-node (?)TEEB EESTI KEELES.  
 Whois - https://npmjs.org/package/whoisclient
 
 Specs: Front:  
@@ -43,9 +42,7 @@ To consider:
 Forever - runst the app  
 How will it come up after server restart
 
-
-
-
-
+Pushed to future versions:
+Localization - i18n - https://github.com/mashpie/i18n-node
 
 
