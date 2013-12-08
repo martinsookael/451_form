@@ -47,9 +47,11 @@ app.post('/', function(req, res){
 	post.contactPerson = req.param('contactPerson');
 	post.name = req.param('name');
 	post.email = req.param('email');
-	savePost(post);
-	sendMail(post);
-	res.redirect('/stats');
+	if(post.url) {
+		savePost(post);
+		sendMail(post);
+		res.redirect('/stats');
+	}
 });
 
 //app.get('/stats', stats.list); // user = stats
