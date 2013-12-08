@@ -11,16 +11,22 @@ block content
 		div#selfService
 			form(parsley-validate, method="post")#self
 				p
-					label="URL:"
+					label="Sinu ees- ja perekonnanimi:"
+					input(name="name", type="text", parsley-required="true")#name
+				p
+					label="Sinu e-mail:"
+					input(name="email", type="text", parsley-type="email", parsley-required="true")#email			
+				p
+					label="Aadress, kus sind häiriv sisu paikneb:"
 					input(type="text", parsley-required="true", name="url", title="Täpne aadress, kus asub sisu, mida soovitakse eemaldada")#url
 				p
 					label="Selgitus:"
 					textarea(name="message", parsley-required="true", title="Kirjelda probleemi võimalikult täpselt. On tõenäoline, et kirja saaja ei ole süüdi teid segava sisu eksisteerimises tema lehel.")#message
 				p
-					label="Kontaktisiku e-mail:"
+					label="Lehekülje vastutaja email või lehekülge vastutav isik:"
 					input(name="contactPerson", type="text", parsley-required="true", title="Saavutate parima tulemuse, kui leiate lehelt, kust soovite lasta sisu eemaldada, mõne kontaktisiku andmed")#contactPerson
 				p
-					label="Põhjus:"
+					label="Rikkumise alus:"
 					select(name="reason", parsley-required="true", title="Vali, millist seadust antud sisu rikub")#reason
 						option(value="")="Vali siit juriidiline alus sisu eemaldamiseks"
 						option(value="r1")="Isikuandmeid puudutava sisu eemaldamine"
@@ -28,12 +34,6 @@ block content
 						option(value="r3")="Karistusseadusega keelatud tegevused (vaenu õhutamine, identiteedivargus, lasteporno, sõjapropaganda, internetikelmused jne)"
 						option(value="r4")="Laimu, halvustava, privaatsust rikkuva või isikuõigusi riivava sisu eemaldamine"
 						option(value="r5")="Sisu, mis rikub autoriõigusi"
-				p
-					label="Sinu nimi:"
-					input(name="name", type="text", parsley-required="true")#name
-				p
-					label="Sinu e-mail:"
-					input(name="email", type="text", parsley-type="email", parsley-required="true")#email
 				p.
-				<strong>Kõikide väljade täitmine on kustuslik.</strong><br />
+				<strong>Kõikide väljade täitmine on kohustuslik.</strong><br />
 				input(type="submit", value="Saada")#send
