@@ -52,7 +52,7 @@ app.post('/', function(req, res){
 		sendMail(post);
 		res.redirect('/stats');
 	} else {
-    	res.sendfile(__dirname + '/public/views/index.jade');    
+    	res.sendfile(__dirname + '/views/index.jade');    
 	}
 	
 });
