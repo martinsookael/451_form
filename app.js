@@ -231,7 +231,7 @@ function createMail(post) {
 		break;
 
 		case "r5": // Sisu, mis rikub autoriõigusi 
-		content += "Sisu, mis rikub autoriõigusi<br />Kui keegi on oma kodulehele ilma õiguseid omamata pannud üles muusikat, filme või arvutiprogramme (aga ka muud autoriõiguste alla kuuluvat materjali), siis on tegu intellektuaalomandi rikkumisega (autoriõiguse seadus (AutÕS) § 81<sup>4</sup>).\r\n\r\n Sel juhul võtab kodulehe omanikuga või teenusepakkujaga, kelle serveris koduleht asub, ühendust kas autoriõiguste omanik ise või autoriõiguste kaitse organisatsioon ja nõuab sisu eemaldamist (AutÕS § 13 lg 1 p 2).<br /><br />Kui inimene sellest hoolimata filme, muusikat või muud autoriõigustega kaitstud sisu maha ei võta, võtab teenusepakkuja lehekülje maha (AutÕS § 13 lg 1 p 2, KarS § 223 lg 1). Kui teenusepakkuja lehekülge maha ei võta, siis on ka tema kaasvastutav.";
+		content += "Sisu, mis rikub autoriõigusi<br />Kui keegi on oma kodulehele ilma õiguseid omamata pannud üles muusikat, filme või arvutiprogramme (aga ka muud autoriõiguste alla kuuluvat materjali), siis on tegu intellektuaalomandi rikkumisega (autoriõiguse seadus (AutÕS) § 81<sup>4</sup>).\r\n\r\nTeise isiku identiteeti ei tohi kasutada ilma tema nõusolekuta  - selline tegevus on karistatav KarS § 1572 lähtuvalt.\r\n\r\nLasteporno on kindlasti keelatud ja selle kättesaadavaks tegemine on teise astme kuritegu, vastavalt KarS § 178.\r\n\r\nSõda ei tohi propageerida vastavalt KarS § 92, selle eest karistatakse ka.\r\n\r\nArvutikelmus on keelatud vastavalt KarS § 213 ja karistatav.\r\n\r\n";
 		break;
 			
 		default: 

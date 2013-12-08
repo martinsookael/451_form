@@ -20,6 +20,7 @@ Extra help:
 - Siim Tuisk
 - Katre Rugo — legal help
 - Liisi Pajula — legal help
+- Helen Kokk - design help
 
 A bit longer description:  
 1. Embeddable lightweight form.  
