@@ -52,7 +52,30 @@ app.post('/', function(req, res){
 	res.redirect('/stats');
 });
 
-app.get('/stats', stats.list); // user = stats
+//app.get('/stats', stats.list); // user = stats
+
+/*
+        articleProvider.findLast( function(error,docs){
+            res.render('index.jade', { 
+                articles:docs,
+                conf: conf.general
+            });
+        res.end();
+*/
+			
+app.get('/stats', function(req, res){
+	var posts = getPosts();
+
+	//articleProvider.findLast( function(error,docs){
+		res.render('stats.jade', {  // SIIA SISSSSSE!!!!!
+			articles:posts
+			//conf: conf.general
+		});
+		res.end();
+	//})
+});
+			
+
 
 
 /* 
@@ -117,16 +140,14 @@ function sendMail(post) {
 //getPosts();
 function getPosts() {
 
+	var daData = new Array;
+
 	// query with parameters
 	var params = {
 		order: '-createdAt',
 		limit: 10
 	};
-	
-	kaiseki.getObjects('Posts', params, function(err, res, body, success) {
-	  console.log('10 last posts = ', body);
-	});
-
+		
 	// I AM SO SORRY FOR QUERYING LIKE THIS BUT IT'S 10:49 PM AND I STILL HAVE A LOT TO DO!!!!
 	var params1 = {
 		where: {"reason":"r1"},
@@ -155,22 +176,35 @@ function getPosts() {
 		count: 1,
 		limit: 0
 	};
+
+	var pppposts = kaiseki.getObjects('Posts', params, function(err, res, body, success) {
+		daData.lastPosts = body;
+	});
 	
-	kaiseki.getObjects('Posts', params1, function(err, res, body, success) {
-	  console.log('r1 = ', body);
+	var rrr1 = kaiseki.getObjects('Posts', params1, function(err, res, body, success) {
+	  //console.log('r1 = ', body);
+		daData.r1 = body;
 	});
-	kaiseki.getObjects('Posts', params2, function(err, res, body, success) {
-	  console.log('r2 = ', body);
+	var rrr2 = kaiseki.getObjects('Posts', params2, function(err, res, body, success) {
+	  //console.log('r2 = ', body);
+		daData.r2 = body;
 	});
-	kaiseki.getObjects('Posts', params3, function(err, res, body, success) {
-	  console.log('r3 = ', body);
+	var rrr3 = kaiseki.getObjects('Posts', params3, function(err, res, body, success) {
+	  //console.log('r3 = ', body);
+		daData.r3 = body;
 	});
-	kaiseki.getObjects('Posts', params4, function(err, res, body, success) {
-	  console.log('r4 = ', body);
+	var rrr4 = kaiseki.getObjects('Posts', params4, function(err, res, body, success) {
+	  //console.log('r4 = ', body);
+		daData.r4 = body;
 	});
-	kaiseki.getObjects('Posts', params5, function(err, res, body, success) {
-	  console.log('r5 = ', body);
+	var rrr5 = kaiseki.getObjects('Posts', params5, function(err, res, body, success) {
+	  //console.log('r5 = ', body);
+		daData.r5 = body;
+		//console.log(daData.lastPosts);
 	});
+	
+	//console.log(daData);
+	return daData;
 }
 
 function createMail(post) {

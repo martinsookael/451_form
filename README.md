@@ -17,9 +17,9 @@ Extra help:
 Merilin Mandel - Estonian language help
 Andri Möll - Node js help
 Martin Grüner - Node js help
-legal help 1
-legal help 2
-
+Siim Tuisk - 
+Katre Rugo - legal help 
+Liisi Pajula - legal help
 
 A bit longer description:  
 1. Embeddable lightweight form.  
