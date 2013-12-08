@@ -211,7 +211,7 @@ function createMail(post) {
 
 	var content = "Lugupeetud veebihaldur!\r\n\r\nKirjutame Teile lehelt www.451.ee. Meie eesmärk on Internetikeskkonna turvalisemaks ja lugupidavamaks muutmine.\r\n\r\nPöördume Teie poole seoses järgneva lingi / pildi avaldamisega Teie veebilehel:\r\n\r\n";
 	content += post.url;
-	content += "\r\n\r\nMeie poole on pöördutud seoses sellel lingil toimuva isikuandmete kaitsega seotud õiguste rikkumisega. \r\n\r\nPeaksite viidatud andmed viivitamata oma veebilehelt eemaldama.";
+	content += "\r\n\r\nMeie poole on pöördutud seoses sellel lingil toimuva isikuandmete kaitsega seotud õiguste rikkumisega ja taotlevad selle sisu eemaldamist.";
 	
 	switch(post.reason) {
 		case "r1": // Isikuandmeid puudutava sisu eemaldamine 
@@ -242,8 +242,7 @@ function createMail(post) {
 //Andmesubjektil on isikuandmete kaitse seaduse § 11 lõike 4 alusel õigus igal ajal nõuda isikuandmete töötlejalt isikuandmete töötlemise lõpetamist. 
 //Kui Te viidatud andmeid ei eemalda, siis vastavalt isikuandmete kaitse seaduse § 22-le on andmesubjektil õigus pöörduda Andmekaitse Inspektsiooni poole, kellel on õigus veebilehe omaniku suhtes rakendada isikuandmete kaitse seaduse nõuete rikkumise eest sunniraha summas kuni 9600 eurot (isikuandmete kaitse seaduse § 40 lg 2). 
 
-	content += "Palun lugege õiguslikku teavet rikkumise kohta aadressil:\r\nhttp://451.ee/juriidiline-analuus/\r\n\r\nSoovitame Teil andmete eemaldamisel mitte kasutada veakoodi error 404, vaid koodi 451 selgitusega “Seadus piirab ligipääsu” viitega lingile www.451.ee/sisu-eemaldamise-viisid/ \r\n\r\nHindame teie koostööd ja abi! Parimate soovidega!\r\nTeie 451";
-		
+	content += "Palume viidatud andmed viivitamata oma veebilehelt eemaldada, kui nõustute taotlusega. Soovitame Teil andmete eemaldamisel mitte kasutada veakoodi error 404, vaid koodi 451 selgitusega “Seadus piirab ligipääsu” viitega lingile \r\n\http://451.ee/sisu-eemaldamise-viisid/ \r\n\r\nLugege õiguslikku teavet rikkumise kohta aadressil: http://451.ee/juriidiline-analuus\r\n\r\nHindame teie koostööd ja abi!\r\n\r\nParimate soovidega!\r\n\r\nTeie 451\r\n\r\nInstitute of Digital Rights usub, et sõnavabadus internetis saab olla tagatud vaid siis, kui on teada, kes, mis alusel ja millist sisu internetist eemaldab. Instituudi projekti “451″ eesmärk on aidata kaasa sellele, et internetist sisu eemaldamine oleks seaduslik ja dokumenteeritud ning statistika selle kohta avalikult kättesaadav.\r\n\r\n Diplohack Tallinn 2013 raames loodud 451 veebirakendus aitab kaitsta inimeste privaatsust, suurendab ühiskonna teadlikkust ja riigi läbipaistvust ning muudab internetti turvalisemaks ja lugupidavamaks. ";
 	return content;
 }
 
