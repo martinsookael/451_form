@@ -8,18 +8,18 @@ Short description:
 451.ee helps you to remove illegal content from internet.
 
 Team:  
-Ele-Riin Kullamä - Marketing
-Silver Meikar  
-Martin Sookael - Development
-Jaan Kruusma - Marketing help
+- Ele-Riin Kullamä — Marketing
+- Silver Meikar
+- Martin Sookael — Development
+- Jaan Kruusma — Marketing help
 
 Extra help:  
-Merilin Mandel - Estonian language help
-Andri Möll - Node js help
-Martin Grüner - Node js help
-Siim Tuisk - 
-Katre Rugo - legal help 
-Liisi Pajula - legal help
+- Merilin Mandel — Estonian language help
+- [Andri Möll](http://themoll.com) — Node.js help
+- Martin Grüner — Node.js help
+- Siim Tuisk
+- Katre Rugo — legal help
+- Liisi Pajula — legal help
 
 A bit longer description:  
 1. Embeddable lightweight form.  
