@@ -52,7 +52,7 @@ app.post('/', function(req, res){
 		sendMail(post);
 		res.redirect('/stats');
 	} else {
-		console.log("vavava");
+		res.render('index.jade');
     	//res.sendfile(__dirname + '/views/index.jade');    
 	}
 	
