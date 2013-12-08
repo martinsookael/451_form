@@ -52,7 +52,8 @@ app.post('/', function(req, res){
 		sendMail(post);
 		res.redirect('/stats');
 	} else {
-    	res.sendfile(__dirname + '/views/index.jade');    
+		console.log("vavava");
+    	//res.sendfile(__dirname + '/views/index.jade');    
 	}
 	
 });
