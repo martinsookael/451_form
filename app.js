@@ -40,18 +40,21 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 
 app.post('/', function(req, res){
-	var post = new Array;
-	post.url = req.param('url');
-	post.reason = req.param('reason');
-	post.message = req.param('message');
-	post.contactPerson = req.param('contactPerson');
-	post.name = req.param('name');
-	post.email = req.param('email');
-	if(post.url) {
+	if ( req.param('url') ) {
+		var post = new Array;
+		post.url = req.param('url');
+		post.reason = req.param('reason');
+		post.message = req.param('message');
+		post.contactPerson = req.param('contactPerson');
+		post.name = req.param('name');
+		post.email = req.param('email');
 		savePost(post);
 		sendMail(post);
 		res.redirect('/stats');
+	} else {
+		routes.index;
 	}
+	
 });
 
 //app.get('/stats', stats.list); // user = stats
